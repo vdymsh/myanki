@@ -1,0 +1,35 @@
+﻿$
+Я не ходил плавать на прошлой неделе. Я был занят.
+%
+I didn’t go swimming last week. I was busy.
+@
+1 4.1.2018
+$
+- Ты их знаешь?
+- Я знаю только её, а его нет.
+%
+- Do you know them?
+- I only know her, not him.
+@
+2 4.1.2018
+$
+- Она хороший писатель (адвокат/врач)?
+- Была хорошей, в прошлом.
+%
+- Is she a good writer (lawyer/doctor)?
+- She was alright in the past.
+@
+0 24.12.2017
+$
+Я люблю свою жену. Она замечательная!
+Её зовут Джейн, ей 25 лет.
+Она изучает английский и математику.
+Мы хорошая пара.
+%
+I love my wife. She’s great!
+Her name’s Jane, she’s twenty five.
+She studies English and Math.
+We’re a good couple.
+@
+0 24.12.2017
+& 

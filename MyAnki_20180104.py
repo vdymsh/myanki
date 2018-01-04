@@ -12,13 +12,39 @@ class Item:
         self.right_answer_month = right_answer_month
         self.right_answer_day = right_answer_day
 
-items = []              # list of question - answer item read from file
-assignments = []        # list of question - answer item included in assigned items
-assigned_items = []     # index list of items for this session's active assignments
-total_items = 0         # total count of items in data file
-total_assignments = 0   # total count of assignments for the session
-solved_assignments = 0  # count of solved assignments during the session
-comments = []
+class Deck:
+    def __init__(self, items = [], count = 0, comments = []):
+        self.items = items
+        self.count = count
+        self.comments = comments
+
+    def write_items(self, filename):
+        ff = codecs.open(filename, "w", encoding = 'utf-8-sig')
+        for item in self.items:
+            ff.write('$\n')
+            ff.write(item.question + '\n')
+            ff.write('%\n')
+            ff.write(item.answer + '\n')
+            ff.write('@\n')
+            ff.write(str(item.right_count) + ' '
+                     + str(item.right_answer_day) + '.'
+                     + str(item.right_answer_month) + '.'
+                     + str(item.right_answer_year) + '\n')
+        for c in self.comments:
+            ff.write('& ' + c  + '\n')
+        ff.close()
+
+class Assignments:
+    def __init__(self, items = [], count = 0,
+                 indexes = [],     # index list of items for this session's active assignments
+                 solved = 0):  # count of solved assignments during the session
+        self.items = items
+        self.count = count
+        self.indexes = indexes
+        self.solved = solved
+
+deck = Deck()          # list of question - answer item read from file
+assignments = Assignments() # list of question - answer item included in assigned items
 
 data_file = ""          # filename for questions - answers collection
 chunk_count = 30        # max count of assignments for the session
@@ -28,22 +54,6 @@ pauses = (0, 1, 2, 4, 8, 16, 32, 64,)
 
 today = date.today()
 today_str = today.strftime("%d.%m.%Y")
-
-def write_items(filename, items, total_items, comments):
-    ff = codecs.open(filename, "w", encoding = 'utf-8-sig')
-    for item in items:
-        ff.write('$\n')
-        ff.write(item.question + '\n')
-        ff.write('%\n')
-        ff.write(item.answer + '\n')
-        ff.write('@\n')
-        ff.write(str(item.right_count) + ' '
-                 + str(item.right_answer_day) + '.'
-                 + str(item.right_answer_month) + '.'
-                 + str(item.right_answer_year) + '\n')
-    for c in comments:
-        ff.write('& ' + c  + '\n')
-    ff.close()
 
 # Reading .cfg file
 try:
@@ -55,16 +65,6 @@ try:
         pauses = eval(ff.readline().strip())
 except:
     print("Error with reading cfg file - using defaults")
-
-'''
-print(data_file)
-print(chunk_count)
-print(right_answers)
-print(right_after_wrong_answers)
-print(pauses)
-'''
-
-# new_filename = input("Filename: ")
 
 f = codecs.open(data_file, 'r', encoding = 'utf-8-sig')
 line = f.readline().strip()
@@ -104,19 +104,22 @@ while line:
             new_item.right_answer_year = int(ys)
             new_item.right_answer_month = int(ms)
             new_item.right_answer_day = int(ds)
-            items.append(new_item)
-# включаем ли new_item в assignments?
-            if total_assignments < chunk_count:
+
+            # add item to the deck
+            deck.items.append(new_item)
+            deck.count += 1
+
+            # включаем ли new_item в assignments?
+            if assignments.count < chunk_count:
                 last_date = date(new_item.right_answer_year,
                                  new_item.right_answer_month,
                                  new_item.right_answer_day)
                 if last_date + timedelta(pauses[new_item.right_count]) <= today:
-                    assignments.append(new_item)
-                    total_assignments += 1
-                    assigned_items.append([item_ndx, 1, 0, 0])
+                    assignments.items.append(new_item)
+                    assignments.count += 1
+                    assignments.indexes.append([item_ndx, 1, 0, 0])
                     item_ndx += 1
-# --- включаем ли new_item в assignments?
-            total_items += 1
+
             line = f.readline().strip()
             continue
 
@@ -125,29 +128,17 @@ while line:
         break
 
 while line:
-    comments.append(line[1:].strip())
+    deck.comments.append(line[1:].strip())
     line = f.readline().strip()
+
 f.close()
 
-'''
-for c in comments:
-    print(c)
-'''
-
-'''
-for item in items:
-    print(item[0])
-    print(item[1])
-    print(item[2], item[3])
-'''
-
-while solved_assignments < total_assignments:
+while assignments.solved < assignments.count:
     today_str = today.strftime("%d.%m.%Y")
-#    print(today_str)
-    for aitems in assigned_items:
+    for aitems in assignments.indexes:
         if aitems[1] == 0:
             continue
-        item = assignments[aitems[0]]
+        item = assignments.items[aitems[0]]
 #        item[2] += 1
         print(item.question)
         ans = input("Answer: ")
@@ -155,12 +146,12 @@ while solved_assignments < total_assignments:
         while True:
             res = int(input("Yes(1) / No(0) / Break(9): "))
             if (res == 9):
-                solved_assignments = total_assignments
+                assignments.solved = assignments.count
                 break
             elif (res == 0):
                 aitems[2] += 1
                 aitems[3] = 0
-                assignments[aitems[0]].right_count = 0
+                assignments.items[aitems[0]].right_count = 0
                 break
             elif (res == 1):
                 aitems[2] += 1
@@ -168,21 +159,21 @@ while solved_assignments < total_assignments:
 
                 if aitems[2] == aitems[3] and aitems[3] >= right_answers:
                     aitems[1] = 0
-                    solved_assignments += 1
-                    assignments[aitems[0]].right_answer_day = today.day
-                    assignments[aitems[0]].right_answer_month  = today.month
-                    assignments[aitems[0]].right_answer_year  = today.year
-                    assignments[aitems[0]].right_count += 1
+                    assignments.solved += 1
+                    assignments.items[aitems[0]].right_answer_day = today.day
+                    assignments.items[aitems[0]].right_answer_month  = today.month
+                    assignments.items[aitems[0]].right_answer_year  = today.year
+                    assignments.items[aitems[0]].right_count += 1
                 elif aitems[3] >= right_after_wrong_answers:
                     aitems[1] = 0
-                    solved_assignments += 1
-                    assignments[aitems[0]].right_answer_day = today.day
-                    assignments[aitems[0]].right_answer_month = today.month
-                    assignments[aitems[0]].right_answer_year = today.year
+                    assignments.solved += 1
+                    assignments.items[aitems[0]].right_answer_day = today.day
+                    assignments.items[aitems[0]].right_answer_month = today.month
+                    assignments.items[aitems[0]].right_answer_year = today.year
                 break
             else:
                 continue
-        if (solved_assignments == total_assignments):
+        if (assignments.solved == assignments.count):
             break
 
 res = int(input("Save(1) / Save As...(2) / Don't Save(0): "))
@@ -190,6 +181,6 @@ if res == 2:
     data_file = input("Filename: ")
 
 if res == 1 or res == 2:
-    write_items(data_file, items, total_items, comments)
+    deck.write_items(data_file)
 
 print("All done!")
