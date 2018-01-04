@@ -1,6 +1,17 @@
 ﻿import codecs
 from datetime import date, timedelta
 
+class Item:
+    def __init__(self, question = '', answer = '', right_count = 0,
+                 right_answer_year = 1970, right_answer_month = 1,
+                 right_answer_day = 1):
+        self.question = question
+        self.answer = answer
+        self.right_count = right_count
+        self.right_answer_year = right_answer_year
+        self.right_answer_month = right_answer_month
+        self.right_answer_day = right_answer_day
+
 items = []              # list of question - answer item read from file
 assignments = []        # list of question - answer item included in assigned items
 assigned_items = []     # index list of items for this session's active assignments
@@ -22,11 +33,14 @@ def write_items(filename, items, total_items, comments):
     ff = codecs.open(filename, "w", encoding = 'utf-8-sig')
     for item in items:
         ff.write('$\n')
-        ff.write(item[0] + '\n')
+        ff.write(item.question + '\n')
         ff.write('%\n')
-        ff.write(item[1] + '\n')
+        ff.write(item.answer + '\n')
         ff.write('@\n')
-        ff.write(str(item[2]) + ' ' + str(item[3]) + '.' + str(item[4]) + '.' + str(item[5]) + '\n')
+        ff.write(str(item.right_count) + ' '
+                 + str(item.right_answer_day) + '.'
+                 + str(item.right_answer_month) + '.'
+                 + str(item.right_answer_year) + '\n')
     for c in comments:
         ff.write('& ' + c  + '\n')
     ff.close()
@@ -66,7 +80,7 @@ while line:
             break
         if (ch == '$'):
         # читаем следующие две единицы информации и добавляем item в список assignments
-            new_item = []
+            new_item = Item()
             next_string = ''
             line = f.readline().strip()
             while line[0] != '%':
@@ -74,7 +88,7 @@ while line:
                 line = f.readline().strip()
                 if line[0] != '%':
                     next_string += '\n'
-            new_item.append(next_string)
+            new_item.question = next_string    # question
             next_string = ''
             line = f.readline().strip()
             while line[0] != '@':
@@ -82,21 +96,21 @@ while line:
                 line = f.readline().strip()
                 if line[0] != '@':
                     next_string += '\n'
-            new_item.append(next_string)
-
+            new_item.answer = next_string    # answer
             line = f.readline().strip()
             data = list(line.split())
-            new_item.append(int(data[0]))
-            ys, ms, ds = data[1].split('.')
-            new_item.append(int(ys))
-            new_item.append(int(ms))
-            new_item.append(int(ds))
-#            print(new_item)
+            new_item.right_count = int(data[0])
+            ds, ms, ys = data[1].split('.')
+            new_item.right_answer_year = int(ys)
+            new_item.right_answer_month = int(ms)
+            new_item.right_answer_day = int(ds)
             items.append(new_item)
 # включаем ли new_item в assignments?
             if total_assignments < chunk_count:
-                last_date = date(new_item[5], new_item[4], new_item[3])
-                if last_date + timedelta(pauses[new_item[2]]) <= today:
+                last_date = date(new_item.right_answer_year,
+                                 new_item.right_answer_month,
+                                 new_item.right_answer_day)
+                if last_date + timedelta(pauses[new_item.right_count]) <= today:
                     assignments.append(new_item)
                     total_assignments += 1
                     assigned_items.append([item_ndx, 1, 0, 0])
@@ -135,9 +149,9 @@ while solved_assignments < total_assignments:
             continue
         item = assignments[aitems[0]]
 #        item[2] += 1
-        print(item[0])
+        print(item.question)
         ans = input("Answer: ")
-        print(item[1])
+        print(item.answer)
         while True:
             res = int(input("Yes(1) / No(0) / Break(9): "))
             if (res == 9):
@@ -146,7 +160,7 @@ while solved_assignments < total_assignments:
             elif (res == 0):
                 aitems[2] += 1
                 aitems[3] = 0
-                assignments[aitems[0]][2] = 0
+                assignments[aitems[0]].right_count = 0
                 break
             elif (res == 1):
                 aitems[2] += 1
@@ -155,16 +169,16 @@ while solved_assignments < total_assignments:
                 if aitems[2] == aitems[3] and aitems[3] >= right_answers:
                     aitems[1] = 0
                     solved_assignments += 1
-                    assignments[aitems[0]][3] = today.day
-                    assignments[aitems[0]][4] = today.month
-                    assignments[aitems[0]][5] = today.year
-                    assignments[aitems[0]][2] += 1
+                    assignments[aitems[0]].right_answer_day = today.day
+                    assignments[aitems[0]].right_answer_month  = today.month
+                    assignments[aitems[0]].right_answer_year  = today.year
+                    assignments[aitems[0]].right_count += 1
                 elif aitems[3] >= right_after_wrong_answers:
                     aitems[1] = 0
                     solved_assignments += 1
-                    assignments[aitems[0]][3] = today.day
-                    assignments[aitems[0]][4] = today.month
-                    assignments[aitems[0]][5] = today.year
+                    assignments[aitems[0]].right_answer_day = today.day
+                    assignments[aitems[0]].right_answer_month = today.month
+                    assignments[aitems[0]].right_answer_year = today.year
                 break
             else:
                 continue
