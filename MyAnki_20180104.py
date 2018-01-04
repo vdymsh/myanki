@@ -12,6 +12,7 @@ class Item:
         self.right_answer_month = right_answer_month
         self.right_answer_day = right_answer_day
 
+# Full deck of questions - answers in the input file
 class Deck:
     def __init__(self, items = [], count = 0, comments = []):
         self.items = items
@@ -34,26 +35,35 @@ class Deck:
             ff.write('& ' + c  + '\n')
         ff.close()
 
-class Assignments:
+class NdxUnit:
+    def __init__(self, ndx, active = True, answers = 0, continuous_answers = 0):
+        self.ndx = ndx
+        self.active = active
+        self.answers = answers
+        self.continuous_answers = continuous_answers
+
+class Assignment:
     def __init__(self, items = [], count = 0,
-                 indexes = [],     # index list of items for this session's active assignments
-                 solved = 0):  # count of solved assignments during the session
+                 indexes = [],     # index list of items for this session's active assignment
+                 solved = 0):  # count of solved assignment during the session
         self.items = items
         self.count = count
         self.indexes = indexes
         self.solved = solved
 
-deck = Deck()          # list of question - answer item read from file
-assignments = Assignments() # list of question - answer item included in assigned items
 
-data_file = ""          # filename for questions - answers collection
-chunk_count = 30        # max count of assignments for the session
+# configuration defaults
+data_file = "MyAnkiData.txt"
+chunk_count = 30
 right_answers = 1
 right_after_wrong_answers = 2
 pauses = (0, 1, 2, 4, 8, 16, 32, 64,)
 
+deck = Deck()          # list of question - answer item read from file
+assignment = Assignment() # list of question - answer item included in assigned items
+
 today = date.today()
-today_str = today.strftime("%d.%m.%Y")
+# today_str = to0day.strftime("%d.%m.%Y")
 
 # Reading .cfg file
 try:
@@ -79,7 +89,7 @@ while line:
         if (ch == '&'):
             break
         if (ch == '$'):
-        # читаем следующие две единицы информации и добавляем item в список assignments
+        # читаем следующие две единицы информации и добавляем item в список assignment
             new_item = Item()
             next_string = ''
             line = f.readline().strip()
@@ -109,15 +119,15 @@ while line:
             deck.items.append(new_item)
             deck.count += 1
 
-            # включаем ли new_item в assignments?
-            if assignments.count < chunk_count:
+            # включаем ли new_item в assignment?
+            if assignment.count < chunk_count:
                 last_date = date(new_item.right_answer_year,
                                  new_item.right_answer_month,
                                  new_item.right_answer_day)
                 if last_date + timedelta(pauses[new_item.right_count]) <= today:
-                    assignments.items.append(new_item)
-                    assignments.count += 1
-                    assignments.indexes.append([item_ndx, 1, 0, 0])
+                    assignment.items.append(new_item)
+                    assignment.count += 1
+                    assignment.indexes.append(NdxUnit(item_ndx))
                     item_ndx += 1
 
             line = f.readline().strip()
@@ -133,47 +143,45 @@ while line:
 
 f.close()
 
-while assignments.solved < assignments.count:
-    today_str = today.strftime("%d.%m.%Y")
-    for aitems in assignments.indexes:
-        if aitems[1] == 0:
+while assignment.solved < assignment.count:
+    for aitems in assignment.indexes:
+        if not aitems.active:
             continue
-        item = assignments.items[aitems[0]]
-#        item[2] += 1
+        item = assignment.items[aitems.ndx]
         print(item.question)
         ans = input("Answer: ")
         print(item.answer)
         while True:
             res = int(input("Yes(1) / No(0) / Break(9): "))
             if (res == 9):
-                assignments.solved = assignments.count
+                assignment.solved = assignment.count
                 break
             elif (res == 0):
-                aitems[2] += 1
-                aitems[3] = 0
-                assignments.items[aitems[0]].right_count = 0
+                aitems.answers += 1
+                aitems.continuous_answers = 0
+                assignment.items[aitems.ndx].right_count = 0
                 break
             elif (res == 1):
-                aitems[2] += 1
-                aitems[3] += 1
+                aitems.answers += 1
+                aitems.continuous_answers += 1
 
-                if aitems[2] == aitems[3] and aitems[3] >= right_answers:
-                    aitems[1] = 0
-                    assignments.solved += 1
-                    assignments.items[aitems[0]].right_answer_day = today.day
-                    assignments.items[aitems[0]].right_answer_month  = today.month
-                    assignments.items[aitems[0]].right_answer_year  = today.year
-                    assignments.items[aitems[0]].right_count += 1
-                elif aitems[3] >= right_after_wrong_answers:
-                    aitems[1] = 0
-                    assignments.solved += 1
-                    assignments.items[aitems[0]].right_answer_day = today.day
-                    assignments.items[aitems[0]].right_answer_month = today.month
-                    assignments.items[aitems[0]].right_answer_year = today.year
+                if aitems.answers == aitems.continuous_answers and aitems.continuous_answers >= right_answers:
+                    aitems.active = False
+                    assignment.solved += 1
+                    assignment.items[aitems.ndx].right_answer_day = today.day
+                    assignment.items[aitems.ndx].right_answer_month  = today.month
+                    assignment.items[aitems.ndx].right_answer_year  = today.year
+                    assignment.items[aitems.ndx].right_count += 1
+                elif aitems.continuous_answers >= right_after_wrong_answers:
+                    aitems.active = False
+                    assignment.solved += 1
+                    assignment.items[aitems.ndx].right_answer_day = today.day
+                    assignment.items[aitems.ndx].right_answer_month = today.month
+                    assignment.items[aitems.ndx].right_answer_year = today.year
                 break
             else:
                 continue
-        if (assignments.solved == assignments.count):
+        if (assignment.solved == assignment.count):
             break
 
 res = int(input("Save(1) / Save As...(2) / Don't Save(0): "))
