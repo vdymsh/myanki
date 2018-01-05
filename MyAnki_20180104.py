@@ -14,9 +14,10 @@ class Item:
 
 # Full deck of questions - answers in the input file
 class Deck:
-    def __init__(self, items = [], count = 0, comments = []):
+    def __init__(self, items = [], count = 0, solved_count = 0, comments = []):
         self.items = items
         self.count = count
+        self.solved_count = solved_count
         self.comments = comments
 
     def write_items(self, filename):
@@ -67,7 +68,7 @@ today = date.today()
 
 # Reading .cfg file
 try:
-    with open("MyAnki_20171227.cfg", "r") as ff:
+    with open("MyAnki_20180104.cfg", "r") as ff:
         data_file = ff.readline().strip()
         chunk_count = int(ff.readline().strip())
         right_answers = int(ff.readline().strip())
@@ -118,12 +119,14 @@ while line:
             # add item to the deck
             deck.items.append(new_item)
             deck.count += 1
+            last_date = date(new_item.right_answer_year,
+                             new_item.right_answer_month,
+                             new_item.right_answer_day)
+            if last_date + timedelta(pauses[new_item.right_count]) > today:
+                deck.solved_count += 1
 
             # включаем ли new_item в assignment?
             if assignment.count < chunk_count:
-                last_date = date(new_item.right_answer_year,
-                                 new_item.right_answer_month,
-                                 new_item.right_answer_day)
                 if last_date + timedelta(pauses[new_item.right_count]) <= today:
                     assignment.items.append(new_item)
                     assignment.count += 1
@@ -143,16 +146,27 @@ while line:
 
 f.close()
 
+print(" Total questions in the file :", deck.count)
+print("Solved questions in the file :", deck.solved_count)
+print("Num of questions in the chunk:", assignment.count)
+
 while assignment.solved < assignment.count:
     for aitems in assignment.indexes:
         if not aitems.active:
             continue
         item = assignment.items[aitems.ndx]
+        print("Question N:", aitems.ndx + 1)
         print(item.question)
         ans = input("Answer: ")
         print(item.answer)
         while True:
-            res = int(input("Yes(1) / No(0) / Break(9): "))
+            input_str = input("Yes(1) / No(0) / Break(9): ")
+            if not input_str in ('0', '1', '9',):
+                input_str = input("Yes(1) / No(0) / Break(9): ")
+            if not input_str in ('0', '1', '9',):
+                print("Wrong input. Default: '0'")
+                input_str = '0';
+            res = int(input_str)
             if (res == 9):
                 assignment.solved = assignment.count
                 break
@@ -184,7 +198,13 @@ while assignment.solved < assignment.count:
         if (assignment.solved == assignment.count):
             break
 
-res = int(input("Save(1) / Save As...(2) / Don't Save(0): "))
+input_str = input("Save(1) / Save As...(2) / Don't Save(0): ")
+if not input_str in ('0', '1', '2',):
+    input_str = input("Save(1) / Save As...(2) / Don't Save(0): ")
+if not input_str in ('0', '1', '2',):
+    print("Wrong input. Default: '0'")
+    input_str = '0';
+res = int(input_str)
 if res == 2:
     data_file = input("Filename: ")
 

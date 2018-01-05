@@ -1,0 +1,376 @@
+﻿$
+Я (есть) студент. 
+%
+I am a student.
+$
+Я изучаю медицину. 
+%
+I study medicine.
+$
+Я живу со своей девушкой в столице Франции городе Париже. 
+%
+I live with my girl-friend in Paris, the capital of France.
+$
+Мы (живём) с ней вместе уже почти два года. 
+%
+We have been together for almost 2 years.
+$
+Наша жизнь довольно напряженная. 
+%
+Our life is quite busy.
+$
+Каждый день мы должны просыпаться в 6 утра. 
+%
+We must get up at 6 every day.
+$
+Нас только что разбудил сигнал будильника. 
+%
+We were just woken up by the alarm-clock.
+$
+Мы лежим в постели и обсуждаем, что нам надо сделать сегодня.
+%
+Now we are lying in bed and discussing what we need to do today.
+$
+Я действительно люблю кошек
+%
+I do love cats.
+$
+У него их реально пять штук
+%
+He does have five of them
+$
+Пётр купил бананы.
+%
+Peter bought bananas. 
+$
+Ты купил бананы?
+%
+Did you buy bananas? 
+$
+Нет, я не купил бананы.
+%
+No, I didn’t buy bananas. 
+$
+Я куплю эти апельсины.
+%
+I will buy these oranges. 
+$
+Он не купит те апельсины.
+%
+He won’t buy thоse oranges. 
+$
+Они купят апельсины?
+%
+Will they buy oranges? 
+$
+Он купил бананы на прошлой неделе.
+%
+He bought bananas last week. 
+$
+На следующей неделе они купят апельсины.
+%
+They will buy oranges next week. 
+$
+Я люблю книги.
+%
+I love books.
+$
+Мы покупаем яблоки.
+%
+We buy apples.
+$
+Он любит музыку.
+%
+He loves music.
+$
+Они покупают бананы.
+%
+They buy bananas.
+$
+Нам нравятся эти книги.
+%
+We love these books.
+$
+Он покупает там яблоки.
+%
+He buys apples there.
+$
+Я так не думаю.
+%
+I don’t think so.
+$
+Я не слишком люблю журналы.
+%
+I don’t love magazines too much.
+$
+Ты не любишь книги, я знаю.
+%
+You don’t love books, I know.
+$
+Он не любит читать книги.
+%
+He doesn’t love reading books.
+$
+Она любит читать журналы.
+%
+She loves reading magazines.
+$
+Люблю ли я книги?
+%
+Do I love books?
+$
+Любят ли они эти журналы?
+%
+Do they love these magazines?
+$
+Она обычно покупает яблоки?
+%
+Does she usually buy apples?
+$
+Он действительно любит читать книги?
+%
+Does he really love reading books?
+$
+Я работаю здесь иногда.
+%
+I work here sometimes.
+$
+Обычно она работает там каждый день.
+%
+She usually works there every day.
+$
+Он никогда не работает здесь.
+%
+He never works here.
+$
+Они работали там два дня назад.
+%
+They worked there two days ago.
+$
+Обычно я не работаю.
+%
+Usually I don’t work.
+$
+Я не работаю здесь каждый день.
+%
+I don’t work here every day.
+$
+Он не работает там.
+%
+He doesn’t work there.
+$
+Мы часто работаем там.
+%
+We often work there.
+$
+Им нравятся яблоки?
+%
+Do they like apples?
+$
+Им нравятся те бананы?
+%
+Do they like those bananas?
+$
+Она покупает здесь бананы?
+%
+Does she buy bananas here?
+$
+Им нравятся апельсины?
+%
+Do they like oranges?
+$
+Я знаю его очень хорошо.
+%
+I know him very well.
+$
+Онa знает Джона.
+%
+She knows John.
+$
+Ты на самом деле знаешь Джона?
+%
+Do you really know John?
+$
+Нет, я не знаю Джона.
+%
+No, I don’t know John.
+$
+Я думал тебе нравится (это)
+%
+I thought you like it.
+$
+Ему очень нравится танцевать.
+%
+He loves dancing very much.
+$
+У неё два брата.
+%
+She has two brothers.
+$
+Мэри знает Джона очень хорошо.
+%
+Mary knows John very well.
+$
+John thinks he loves Mary.
+%
+Does John love Mary?
+$
+Джон думает, что любит Мэри.
+%
+Любит ли Джон Мэри?
+$
+Я купил эту машину только вчера.
+%
+I bought this car only yesterday.
+$
+У них (есть) две машины.
+%
+They have two cars.
+$
+В прошлом месяце у неё было 3 мотоцикла.
+%
+Last month she had three bikes.
+$
+Я не покупал эти ужасные журналы.
+%
+I didn’t buy these awful magazines.
+$
+Он часто очень хорошо танцует.
+%
+He often dances very well.
+$
+В прошлом году она танцевала очень хорошо.
+%
+Last year she danced very well.
+$
+Я взял эти книги домой.
+%
+I took these books home.
+$
+У меня было лишь одно яблоко, не два.
+%
+I had only one apple, not two.
+$
+Я думаю, он очень хорошо танцует.
+%
+I think he dances very well.
+$
+У неё (есть) две квартиры.
+%
+She has two apartments.
+$
+В прошлом году они купили пять домов.
+%
+Last year they bought five houses.
+$
+Он взял эти журналы в прошлый вторник.
+%
+He took these magazines last Tuesday.
+$
+У меня будет эта книга в следующую среду.
+%
+I’ll have this book next Wednesday.
+$
+Завтра он возьмёт эти книги домой.
+%
+Tomorrow he’ll take these books home.
+$
+Завтра она будет работать намного лучше.
+%
+Tomorrow he’ll work much better.
+$
+Она купит те журналы на следующей неделе?
+%
+Will she buy those magazines next week?
+$
+Завтра я буду очень хорошо танцевать.
+%
+I’ll dance very well tomorrow.
+$
+Завтра у них не будет молока или сока.
+%
+Tomorrow they won’t have milk or juice.
+$
+Я думаю, ей понравится Джеймс.
+%
+I think she’ll like James.
+$
+Они думали, Мэри любила Джона.
+%
+They thought Mary loved John.
+$
+Это занимает всего 10 минут.
+%
+It only takes ten minutes.
+$
+Она не будет танцевать на следующей неделе.
+%
+She won’t dance next week.
+$
+Ты всегда берёшь их домой?
+%
+Do you sometimes take them home?
+$
+Ты знаешь Джеймса?
+%
+Do you know James?
+$
+Думаешь, он завтра купит апельсины?
+%
+Do you think he’ll buy oranges tomorrow?
+$
+Я не думаю, чтo Мэри любит Джона.
+%
+I don’t think that Mary loves John.
+$
+Ей здесь не особенно нравится.
+%
+She doesn’t really like it here.
+$
+Выглядит здорово. Это ты купил?
+%
+It looks great. Did you buy it?
+$
+Нет, Джеймс купил её там вчера вечером.
+%
+No, James bought it there last night.
+$
+Вечером мы заберём её домой.
+%
+We’ll take it home tonight.
+$
+Хорошая идея!
+%
+Good idea!
+$
+Я живу в Лондоне.
+%
+I live in London.
+$
+Света любит собак.
+%
+Sveta loves dogs.
+$
+Мы не говорим по-английски.
+%
+We don’t speak English.
+$
+Она работала здесь в прошлом году.
+%
+She worked here last year.
+$
+На прошлой неделе они купили машину.
+%
+They bought a car last week.
+$
+На следующей неделе я куплю эти ботинки.
+%
+I will buy these shoes next week.
+$
+Он пришёл/приехал ко мне вчера.
+%
+He came to me last night.
+&
+& 92 Lines
+& Page 40
+&

@@ -1,0 +1,562 @@
+﻿$
+Я (есть) студент.
+%
+I am a student.
+@
+1 5.1.2018
+$
+Я изучаю медицину.
+%
+I study medicine.
+@
+1 5.1.2018
+$
+Я живу со своей девушкой в столице Франции городе Париже.
+%
+I live with my girl-friend in Paris, the capital of France.
+@
+1 5.1.2018
+$
+Мы (живём) с ней вместе уже почти два года.
+%
+We have been together for almost 2 years.
+@
+1 5.1.2018
+$
+Наша жизнь довольно напряженная.
+%
+Our life is quite busy.
+@
+1 5.1.2018
+$
+Каждый день мы должны просыпаться в 6 утра.
+%
+We must get up at 6 every day.
+@
+1 5.1.2018
+$
+Нас только что разбудил сигнал будильника.
+%
+We were just woken up by the alarm-clock.
+@
+1 5.1.2018
+$
+Мы лежим в постели и обсуждаем, что нам надо сделать сегодня.
+%
+Now we are lying in bed and discussing what we need to do today.
+@
+1 5.1.2018
+$
+Я действительно люблю кошек
+%
+I do love cats.
+@
+1 5.1.2018
+$
+У него их реально пять штук
+%
+He does have five of them
+@
+1 5.1.2018
+$
+Пётр купил бананы.
+%
+Peter bought bananas.
+@
+1 5.1.2018
+$
+Ты купил бананы?
+%
+Did you buy bananas?
+@
+1 5.1.2018
+$
+Нет, я не купил бананы.
+%
+No, I didn’t buy bananas.
+@
+1 5.1.2018
+$
+Я куплю эти апельсины.
+%
+I will buy these oranges.
+@
+1 5.1.2018
+$
+Он не купит те апельсины.
+%
+He won’t buy thоse oranges.
+@
+1 5.1.2018
+$
+Они купят апельсины?
+%
+Will they buy oranges?
+@
+1 5.1.2018
+$
+Он купил бананы на прошлой неделе.
+%
+He bought bananas last week.
+@
+1 5.1.2018
+$
+На следующей неделе они купят апельсины.
+%
+They will buy oranges next week.
+@
+1 5.1.2018
+$
+Я люблю книги.
+%
+I love books.
+@
+1 5.1.2018
+$
+Мы покупаем яблоки.
+%
+We buy apples.
+@
+1 5.1.2018
+$
+Он любит музыку.
+%
+He loves music.
+@
+1 5.1.2018
+$
+Они покупают бананы.
+%
+They buy bananas.
+@
+1 5.1.2018
+$
+Нам нравятся эти книги.
+%
+We love these books.
+@
+1 5.1.2018
+$
+Он покупает там яблоки.
+%
+He buys apples there.
+@
+1 5.1.2018
+$
+Я так не думаю.
+%
+I don’t think so.
+@
+1 5.1.2018
+$
+Я не слишком люблю журналы.
+%
+I don’t love magazines too much.
+@
+1 5.1.2018
+$
+Ты не любишь книги, я знаю.
+%
+You don’t love books, I know.
+@
+1 5.1.2018
+$
+Он не любит читать книги.
+%
+He doesn’t love reading books.
+@
+1 5.1.2018
+$
+Она любит читать журналы.
+%
+She loves reading magazines.
+@
+1 5.1.2018
+$
+Люблю ли я книги?
+%
+Do I love books?
+@
+1 5.1.2018
+$
+Любят ли они эти журналы?
+%
+Do they love these magazines?
+@
+1 5.1.2018
+$
+Она обычно покупает яблоки?
+%
+Does she usually buy apples?
+@
+1 5.1.2018
+$
+Он действительно любит читать книги?
+%
+Does he really love reading books?
+@
+1 5.1.2018
+$
+Я работаю здесь иногда.
+%
+I work here sometimes.
+@
+1 5.1.2018
+$
+Обычно она работает там каждый день.
+%
+She usually works there every day.
+@
+1 5.1.2018
+$
+Он никогда не работает здесь.
+%
+He never works here.
+@
+1 5.1.2018
+$
+Они работали там два дня назад.
+%
+They worked there two days ago.
+@
+1 5.1.2018
+$
+Обычно я не работаю.
+%
+Usually I don’t work.
+@
+1 5.1.2018
+$
+Я не работаю здесь каждый день.
+%
+I don’t work here every day.
+@
+1 5.1.2018
+$
+Он не работает там.
+%
+He doesn’t work there.
+@
+1 5.1.2018
+$
+Мы часто работаем там.
+%
+We often work there.
+@
+1 5.1.2018
+$
+Им нравятся яблоки?
+%
+Do they like apples?
+@
+1 5.1.2018
+$
+Им нравятся те бананы?
+%
+Do they like those bananas?
+@
+1 5.1.2018
+$
+Она покупает здесь бананы?
+%
+Does she buy bananas here?
+@
+1 5.1.2018
+$
+Им нравятся апельсины?
+%
+Do they like oranges?
+@
+1 5.1.2018
+$
+Я знаю его очень хорошо.
+%
+I know him very well.
+@
+1 5.1.2018
+$
+Онa знает Джона.
+%
+She knows John.
+@
+1 5.1.2018
+$
+Ты на самом деле знаешь Джона?
+%
+Do you really know John?
+@
+1 5.1.2018
+$
+Нет, я не знаю Джона.
+%
+No, I don’t know John.
+@
+1 5.1.2018
+$
+Я думал тебе нравится (это)
+%
+I thought you like it.
+@
+1 5.1.2018
+$
+Ему очень нравится танцевать.
+%
+He loves dancing very much.
+@
+1 5.1.2018
+$
+У неё два брата.
+%
+She has two brothers.
+@
+1 5.1.2018
+$
+Мэри знает Джона очень хорошо.
+%
+Mary knows John very well.
+@
+1 5.1.2018
+$
+Джон думает что он любит Мери
+%
+John thinks he loves Mary.
+@
+1 5.1.2018
+$
+Любит ли Джон Мэри?
+%
+Does John love Mary?
+@
+1 5.1.2018
+$
+Я купил эту машину только вчера.
+%
+I bought this car only yesterday.
+@
+1 5.1.2018
+$
+У них (есть) две машины.
+%
+They have two cars.
+@
+1 5.1.2018
+$
+В прошлом месяце у неё было 3 мотоцикла.
+%
+Last month she had three bikes.
+@
+1 5.1.2018
+$
+Я не покупал эти ужасные журналы.
+%
+I didn’t buy these awful magazines.
+@
+1 5.1.2018
+$
+Он часто очень хорошо танцует.
+%
+He often dances very well.
+@
+1 5.1.2018
+$
+В прошлом году она танцевала очень хорошо.
+%
+Last year she danced very well.
+@
+1 5.1.2018
+$
+Я взял эти книги домой.
+%
+I took these books home.
+@
+1 5.1.2018
+$
+У меня было лишь одно яблоко, не два.
+%
+I had only one apple, not two.
+@
+1 5.1.2018
+$
+Я думаю, он очень хорошо танцует.
+%
+I think he dances very well.
+@
+1 5.1.2018
+$
+У неё (есть) две квартиры.
+%
+She has two apartments.
+@
+1 5.1.2018
+$
+В прошлом году они купили пять домов.
+%
+Last year they bought five houses.
+@
+1 5.1.2018
+$
+Он взял эти журналы в прошлый вторник.
+%
+He took these magazines last Tuesday.
+@
+1 5.1.2018
+$
+У меня будет эта книга в следующую среду.
+%
+I’ll have this book next Wednesday.
+@
+1 5.1.2018
+$
+Завтра он возьмёт эти книги домой.
+%
+Tomorrow he’ll take these books home.
+@
+1 5.1.2018
+$
+Завтра она будет работать намного лучше.
+%
+Tomorrow he’ll work much better.
+@
+1 5.1.2018
+$
+Она купит те журналы на следующей неделе?
+%
+Will she buy those magazines next week?
+@
+1 5.1.2018
+$
+Завтра я буду очень хорошо танцевать.
+%
+I’ll dance very well tomorrow.
+@
+1 5.1.2018
+$
+Завтра у них не будет молока или сока.
+%
+Tomorrow they won’t have milk or juice.
+@
+1 5.1.2018
+$
+Я думаю, ей понравится Джеймс.
+%
+I think she’ll like James.
+@
+1 5.1.2018
+$
+Они думали, Мэри любила Джона.
+%
+They thought Mary loved John.
+@
+1 5.1.2018
+$
+Это занимает всего 10 минут.
+%
+It only takes ten minutes.
+@
+1 5.1.2018
+$
+Она не будет танцевать на следующей неделе.
+%
+She won’t dance next week.
+@
+1 5.1.2018
+$
+Ты всегда берёшь их домой?
+%
+Do you always take them home?
+@
+1 5.1.2018
+$
+Ты знаешь Джеймса?
+%
+Do you know James?
+@
+1 5.1.2018
+$
+Думаешь, он завтра купит апельсины?
+%
+Do you think he’ll buy oranges tomorrow?
+@
+1 5.1.2018
+$
+Я не думаю, чтo Мэри любит Джона.
+%
+I don’t think that Mary loves John.
+@
+1 5.1.2018
+$
+Ей здесь не особенно нравится.
+%
+She doesn’t really like it here.
+@
+1 5.1.2018
+$
+Выглядит здорово. Это ты купил?
+%
+It looks great. Did you buy it?
+@
+1 5.1.2018
+$
+Нет, Джеймс купил её там вчера вечером.
+%
+No, James bought it there last night.
+@
+1 5.1.2018
+$
+Вечером мы заберём её домой.
+%
+We’ll take it home tonight.
+@
+1 5.1.2018
+$
+Хорошая идея!
+%
+Good idea!
+@
+1 5.1.2018
+$
+Я живу в Лондоне.
+%
+I live in London.
+@
+1 5.1.2018
+$
+Света любит собак.
+%
+Sveta loves dogs.
+@
+1 5.1.2018
+$
+Мы не говорим по-английски.
+%
+We don’t speak English.
+@
+1 5.1.2018
+$
+Она работала здесь в прошлом году.
+%
+She worked here last year.
+@
+1 5.1.2018
+$
+На прошлой неделе они купили машину.
+%
+They bought a car last week.
+@
+1 5.1.2018
+$
+На следующей неделе я куплю эти ботинки.
+%
+I will buy these shoes next week.
+@
+1 5.1.2018
+$
+Он пришёл/приехал ко мне вчера вечером.
+%
+He came to me last night.
+@
+1 5.1.2018
+& 
+& 92 Lines
+& Page 40
+& 
